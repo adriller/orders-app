@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, FlatList, Dimensions } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import {primary_color, accent_color} from './conf/conf';
 import Button from 'react-native-button';
@@ -19,7 +19,7 @@ export default class Page4 extends React.Component {
           stars: 4.8,
           services: ['Entrega a domicilio', 'Pagar con tarjeta'],
           recipes: [
-            {id: 1, price: 15, unity: 'la unidad', description: 'te va a encantaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar', name: 'torta de arandanos', photo: ['http://arcdn.ar-cdn.com/recipes/xlarge/29bba79e-659a-46bc-b03a-d551c7947851.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKxGgYobqDBsbEkSsu52Q25Vs3PJuOVmPh23cNOns69T6V8iaF']},
+            {id: 1, price: 15, unity: 'unidad', description: 'te va a encantaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar', name: 'torta de arandanos', photo: ['http://arcdn.ar-cdn.com/recipes/xlarge/29bba79e-659a-46bc-b03a-d551c7947851.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKxGgYobqDBsbEkSsu52Q25Vs3PJuOVmPh23cNOns69T6V8iaF']},
             {id: 2, price: 15, unity: 'la unidad', description: 'te va a encantaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar',name: 'pancakes', photo: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKxGgYobqDBsbEkSsu52Q25Vs3PJuOVmPh23cNOns69T6V8iaF']},
             {id: 3, price: 15, unity: 'la unidad', description: 'te va a encantaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar',name: 'Sopa de piña', photo: ['https://imagesvc.timeincapp.com/v3/mm/image?url=http%3A%2F%2Fcdn-img.health.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Flarge_16_9%2Fpublic%2Fstyles%2Fmain%2Fpublic%2Fcurried-ginger-carrot-soup-hl-521968-x.jpg%3Fitok%3D8IOKw6_q&w=700&q=85']}
           ],
@@ -186,6 +186,7 @@ export default class Page4 extends React.Component {
   static navigationOptions = {header: null};
 
 render() {
+  let { height } = Dimensions.get("window");
   return (
     <View style={styles.container}>
       <View style={{ backgroundColor: primary_color, width: '100%',height: 80, alignItems: 'center', justifyContent: 'flex-end', marginBottom: -10, zIndex: 10}}>
@@ -198,14 +199,12 @@ render() {
           source={require('./img/base.png')}
           />
 
-        <FlatList
-          style={{paddingTop: 20,}}
-          data={this.state.sellers}
-          keyExtractor={item => item.id}
-          renderItem={({ item }) => (
-            <PerfilCard nav={this.props.navigation} seller={item}  />
-          )}
-          />
+        <ScrollView>
+          <View style={{padding: 20}}></View>
+          {this.state.sellers.map((item, index) => {return(
+            <PerfilCard key={index} nav={this.props.navigation} seller={item}  />
+          );})}
+        </ScrollView>
 
       </View>
 

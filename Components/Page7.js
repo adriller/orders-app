@@ -53,7 +53,7 @@ render() {
         <Text style={{fontSize: 26, color: 'white', fontWeight: 'bold'}}> {person.name}</Text>
       </View>
       <View style={{ backgroundColor: accent_color, width: '100%', alignItems: 'center', paddingBottom: 10, paddingTop: 10, marginBottom: 0, zIndex: 10}}>
-        <Text style={{fontSize: 26, color: 'white', fontWeight: 'bold'}}> {recipe.name}</Text>
+        <Text style={{fontSize: 26, color: secondary_text_color, fontWeight: 'bold'}}> {recipe.name}</Text>
       </View>
       <View>
         <Image
@@ -98,10 +98,10 @@ render() {
               <Text style={{color: primary_text_color, fontSize: 12, textAlign: 'center'}}>{recipe.unity}</Text>
               <Button
                 styleDisabled={{color: 'red'}}
-                onPress={() => this.props.navigation.navigate('Page8')}
+                onPress={() => this.props.navigation.navigate('Page8', {person: person, recipe: recipe})}
                 >
                 <View style={{ backgroundColor: accent_color, width: '100%', marginTop: 20, padding: 5}}>
-                  <Text style={{fontSize: 24, color: 'white', fontWeight: 'bold', textAlign: 'center'}}> LO QUIERO! </Text>
+                  <Text style={{fontSize: 24, color: 'black', fontWeight: 'bold', textAlign: 'center'}}> LO QUIERO! </Text>
                 </View>
               </Button>
             </View>

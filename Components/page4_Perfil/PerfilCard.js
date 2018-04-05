@@ -38,7 +38,14 @@ export default class PerfilCard extends React.Component {
         </View>
         <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingTop: 10, paddingBottom: 10, }}>
           <ScrollView horizontal={true}>
-            {this.props.seller.recipes.map((recipe, index) => {return(<Image style={{height: 70, width: 70, marginLeft: 10, marginRight: 10}} source={{uri: recipe.photo[0]}} key={index}/>);})}
+            {this.props.seller.recipes.map((recipe, index) => {return(
+              <Button
+                key={index}
+                styleDisabled={{color: 'red'}}
+                onPress={() => this.props.nav.navigate('Page7', {person: this.props.seller, recipe: recipe})}>
+                <Image style={{height: 70, width: 70, marginLeft: 10, marginRight: 10}} source={{uri: recipe.photo[0]}} />
+              </Button>
+            );})}
           </ScrollView>
         </View>
       </View>

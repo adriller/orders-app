@@ -9,11 +9,18 @@ import Page5 from './Components/Page5';
 import Page6 from './Components/Page6';
 import Page7 from './Components/Page7';
 import Page8 from './Components/Page8';
+import Page9 from './Components/Page9';
+import Page10 from './Components/Page10';
+import Page11 from './Components/Page11';
+import Page12 from './Components/Page12';
+import Page13 from './Components/Page13';
+import Page14 from './Components/Page14';
+import Page15 from './Components/Page15';
 
 
 const RootStack = StackNavigator({
   Home: {
-    screen: HomeScreen,
+    screen: Page12,
   },
   Page2: {
     screen: Page2,
@@ -35,6 +42,27 @@ const RootStack = StackNavigator({
   },
   Page8: {
     screen: Page8,
+  },
+  Page9: {
+    screen: Page9,
+  },
+  Page10: {
+    screen: Page10,
+  },
+  Page11: {
+    screen: Page11,
+  },
+  Page12: {
+    screen: Page12,
+  },
+  Page13: {
+    screen: Page13,
+  },
+  Page14: {
+    screen: Page14,
+  },
+  Page15: {
+    screen: Page15,
   },
 });
 

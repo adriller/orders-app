@@ -28,7 +28,7 @@ render() {
           </Button>
           <Button
             styleDisabled={{color: 'red'}}
-            onPress={() => alert('not implemented')}>
+            onPress={() => this.props.navigation.navigate('Page10')}>
             <View style={{backgroundColor: 'white', width: 300, height: 50, borderColor: primary_color, borderWidth: 2,borderRadius: 20, overflow:'hidden', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
               <Text style={{fontSize: 20, textAlign: 'center', color: primary_color}}>Quiero vender encomiendas</Text>
             </View>

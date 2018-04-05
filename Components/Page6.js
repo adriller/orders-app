@@ -9,27 +9,7 @@ export default class Page6 extends React.Component {
   constructor(props) {
     super(props);
     this.state={
-      person: {
-        id: 1,
-        name: 'Maria Dulces',
-        photo_perfil: 'http://static.celebuzz.com/uploads/2012/07/15/Maria-Menounos-Bikinis-with-Shirtless-Derek-Hough-in-Malibu-6-620x413.jpg',
-        description: 'confia en mis dulces',
-        types:'dulces, pasteles, tortas',
-        stars: 4.8,
-        services: ['Entrega a domicilio', 'Pagar con tarjeta'],
-        recipes: [
-          {id: 1, price: 15, unity: 'la unidad', description: 'te va a encantaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar', name: 'torta de arandanos', photo: ['http://arcdn.ar-cdn.com/recipes/xlarge/29bba79e-659a-46bc-b03a-d551c7947851.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKxGgYobqDBsbEkSsu52Q25Vs3PJuOVmPh23cNOns69T6V8iaF']},
-          {id: 2, price: 15, unity: 'la unidad', description: 'te va a encantaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar',name: 'pancakes', photo: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKxGgYobqDBsbEkSsu52Q25Vs3PJuOVmPh23cNOns69T6V8iaF']},
-          {id: 3, price: 15, unity: 'la unidad', description: 'te va a encantaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar',name: 'Sopa de piña', photo: ['https://imagesvc.timeincapp.com/v3/mm/image?url=http%3A%2F%2Fcdn-img.health.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Flarge_16_9%2Fpublic%2Fstyles%2Fmain%2Fpublic%2Fcurried-ginger-carrot-soup-hl-521968-x.jpg%3Fitok%3D8IOKw6_q&w=700&q=85']}
-        ],
-        comments: [
-          {photo: 'http://static.celebuzz.com/uploads/2012/07/15/Maria-Menounos-Bikinis-with-Shirtless-Derek-Hough-in-Malibu-6-620x413.jpg', text: 'Amei???? Achei tudo?????', stars: 5},
 
-          {photo: 'http://static.celebuzz.com/uploads/2012/07/15/Maria-Menounos-Bikinis-with-Shirtless-Derek-Hough-in-Malibu-6-620x413.jpg', text: 'Lindissima, tava tudo queimado', stars: 3}, 
-
-          {photo: 'http://static.celebuzz.com/uploads/2012/07/15/Maria-Menounos-Bikinis-with-Shirtless-Derek-Hough-in-Malibu-6-620x413.jpg', text: 'Adorei', stars: 1}
-        ]
-      }
     }
   }
   static navigationOptions = {header: null};
@@ -39,6 +19,8 @@ render() {
   const { params } = this.props.navigation.state;
   return (
     <View style={styles.container}>
+      <View style={{ backgroundColor: primary_color, width: '100%', height: 80, zIndex: 0, position:'absolute'}}>
+      </View>
       <View style={{ backgroundColor: primary_color, width: '100%', alignItems: 'center', height: 70, paddingTop: 30, paddingBottom: 10, marginBottom: 0, zIndex: 10}}>
         <Text style={{fontSize: 26, color: 'white', fontWeight: 'bold'}}> {params.name}</Text>
       </View>
